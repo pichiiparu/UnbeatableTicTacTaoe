@@ -1,0 +1,1 @@
+Simply Click on the slot you want to play.
