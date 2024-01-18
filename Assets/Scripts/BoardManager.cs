@@ -47,8 +47,8 @@ public class BoardManager : MonoBehaviour
 
     private void Start()
     {
-        playerTurn = false;
-        aiController.BestMove(); 
+        playerTurn = true;
+        //aiController.BestMove(); 
     }
 
     #endregion
@@ -188,9 +188,9 @@ public class BoardManager : MonoBehaviour
 
         if (CheckAllSlots(slots[0], slots[4], slots[8]) || CheckAllSlots(slots[2], slots[4], slots[6]))
         {
-            if (slots[0].GetSlotValue() == Slot.SlotValue.AI)
+            if (slots[0].GetSlotValue() == Slot.SlotValue.AI || slots[2].GetSlotValue() == Slot.SlotValue.AI)
             {
-                Debug.Log("Player Diagonal Win!");
+                Debug.Log("AI Diagonal Win!");
                 GameManager.Instance.SwitchState(GameManager.GameState.DEFEAT); // AI Wins, player loses
                 return;
             }
